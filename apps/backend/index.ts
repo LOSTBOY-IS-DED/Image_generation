@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080 ;
 const app = express();
 
 app.post("/ai/training", (req , res ) => {
-
+    
 });
 
 app.post("/ai/generate", (req , res ) => {
