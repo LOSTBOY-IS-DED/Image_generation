@@ -27,7 +27,7 @@ enum ModelTypeEnum {
   others
 }
 
-enum EthenecityEnum {
+enum EthinicityEnum {
   White
   Black
   AsianAmerican
@@ -51,7 +51,7 @@ model Model {
   name           String
   type           ModelTypeEnum
   age            Int
-  ethenecity     EthenecityEnum
+  ethinicity     EthinicityEnum
   eyeColor       EyeColorEnum
   bald           Boolean
   trainingImages TrainingImages[]

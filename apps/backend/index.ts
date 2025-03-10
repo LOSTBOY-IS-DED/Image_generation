@@ -1,5 +1,6 @@
 import express from "express";
-import {TrainModel , GenerateImage , GenerateImageFromPack} from "common/types"
+import {TrainModel , GenerateImage , GenerateImageFromPack} from "common/types";
+import { prismaClient } from "db";
 
 const PORT = process.env.PORT || 8080 ; 
 
