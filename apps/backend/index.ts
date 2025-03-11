@@ -36,8 +36,26 @@ app.post("/ai/training",async (req , res ) => {
     })
 });
 
-app.post("/ai/generate", (req , res ) => {
+app.post("/ai/generate", async (req , res ) => {
+    const parsedBody = GenerateImage.safeParse(req.body)
 
+    if(!parsedBody.success){
+        res.status(411).json({
+
+        })
+        return;
+    }
+    const data = await prismaClient.outputImages.create({
+        data : {
+            prompt : parsedBody.data?.prompt , 
+            userId : USER_ID , 
+            modelId : parsedBody.data?.modelId , 
+            imageUrl : ""
+        }
+    })
+    res.json({
+        imageId : data.id
+    })
 });
 
 app.post("/pack/generate", (req , res ) => {
@@ -45,7 +63,7 @@ app.post("/pack/generate", (req , res ) => {
 });
 
 app.post("/pack/bulk", (req , res ) => {
-
+    
 });
 
 app.get("/image", (req , res ) => {
