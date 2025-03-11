@@ -3,20 +3,20 @@ import {z} from "zod" ;
 
 export const TrainModel = z.object({
     name : z.string(),
-    type : z.enum(["Man", "Woman" , "Other"]), 
+    type : z.enum(["Man", "Woman" , "Others"]), 
     age : z.number(),
     ethinicity : z.enum([
-        "white", 
+        "White", 
         "Black" , 
-        "Asian American", 
-        "East Asian", 
-        "South East Asian", 
-        "South Asian", 
-        "Middle Eastern" , 
+        "AsianAmerican", 
+        "EastAsian", 
+        "SouthEastAsian", 
+        "SouthAsian", 
+        "MiddleEastern" , 
         "Pacific" , 
         "Hispanic"
     ]), 
-    eyeColor : z.enum(["Brown" , "Bule" , "Hazel" , "Gray"]), 
+    eyeColor : z.enum(["Brown" , "Blue" , "Hazel" , "Gray"]), 
     bald : z.boolean(), 
     image : z.array(z.string())
 })

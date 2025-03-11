@@ -22,9 +22,9 @@ model User {
 }
 
 enum ModelTypeEnum {
-  man
-  woman
-  others
+  Man
+  Woman
+  Others
 }
 
 enum EthinicityEnum {
@@ -54,6 +54,7 @@ model Model {
   ethinicity     EthinicityEnum
   eyeColor       EyeColorEnum
   bald           Boolean
+  userId         String
   trainingImages TrainingImages[]
   outputImages   OutputImages[]
   createdAt      DateTime         @default(now())
